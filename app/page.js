@@ -626,7 +626,7 @@ function CheckoutDialog({ open, onOpenChange, cart, totals, onPapara }) {
             <div className="flex items-center gap-2 text-sm">
               <Switch checked={form.kvkk} onCheckedChange={(v) => setForm({ ...form, kvkk: v })} />
               <span>
-                KVKK ve Mesafeli Satış Sözleşmesi'ni kabul ediyorum.
+                 Mesafeli Satış Sözleşmesi&apos;ni kabul ediyorum.
               </span>
             </div>
           </div>
