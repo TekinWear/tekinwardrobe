@@ -1,6 +1,6 @@
 import { Dialog } from "@headlessui/react";
 
-export default function CheckoutDialog({ open, setOpen, cart, totals }) {
+export default function CheckoutDialog({ open, onClose, cart, total }) {
   return (
     <Dialog open={open} onClose={() => setOpen(false)} className="relative z-50">
       <div className="fixed inset-0 bg-black/50" aria-hidden="true" />
@@ -17,7 +17,7 @@ export default function CheckoutDialog({ open, setOpen, cart, totals }) {
           </ul>
           <div className="flex justify-between font-bold text-lg mb-4">
             <span>Toplam:</span>
-            <span>{totals.total}₺</span>
+            <span>{totals ? totals.total : 0}₺</span>
           </div>
           <a
             href="https://www.shopier.com/ShowProductNew/storefront.php?shop=TEKİNWEAR" 

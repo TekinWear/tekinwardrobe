@@ -23,6 +23,7 @@ export default function Home() {
     updated.splice(index, 1);
     setCart(updated);
   };
+const total = cart.reduce((sum, item) => sum + item.price, 0);
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
@@ -36,10 +37,15 @@ export default function Home() {
       </div>
 
       {/* Sepet */}
-      <Cart cart={cart} removeFromCart={removeFromCart} openCheckout={() => setCheckoutOpen(true)} />
-
+      <Cart 
+  cart={cart} 
+  removeFromCart={removeFromCart} 
+  total={total} 
+  setOpenCheckout={setCheckoutOpen} 
+/>
       {/* Ödeme Modalı */}
       <CheckoutDialog open={checkoutOpen} onClose={() => setCheckoutOpen(false)} cart={cart} />
     </div>
   );
 }
+
